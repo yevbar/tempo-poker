@@ -4,8 +4,10 @@ set -e
 # Install Tempo CLI if not present
 if [ ! -f "$HOME/.tempo/bin/tempo" ]; then
   echo "Installing Tempo CLI..."
-  curl -fsSL https://tempo.xyz/install | bash
+  curl -fsSL https://tempo.xyz/install | bash || true
 fi
+
+export PATH="$HOME/.tempo/bin:$PATH"
 
 # Restore Tempo wallet keys from env var
 if [ -n "$TEMPO_KEYS_TOML" ]; then
