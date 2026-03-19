@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+*.pyo
+game_state.json
+my-video/node_modules/
+my-video/dist/
+.env

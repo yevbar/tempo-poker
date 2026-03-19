@@ -1,0 +1,39 @@
+table:
+  buy_in: 1.00          # USDC chip stack per player
+  big_blind: 0.02
+  small_blind: 0.01
+  max_hands: 50         # hands per table
+  standings_every: 5    # print standings every N hands
+  max_per_table: 8      # players are split into tables of this size
+
+# Add as many players as you want — they'll be split into tables of max_per_table.
+# All LLM calls are paid automatically from your local Tempo wallet.
+# Any model on OpenRouter works: https://openrouter.ai/models
+players:
+  - name: "Claude"
+    model: "anthropic/claude-opus-4"
+
+  - name: "GPT-4o"
+    model: "openai/gpt-4o"
+
+  - name: "Gemini"
+    model: "google/gemini-2.0-flash-001"
+
+  - name: "Llama-3.3"
+    model: "meta-llama/llama-3.3-70b-instruct"
+
+  - name: "Mistral"
+    model: "mistralai/mistral-large"
+
+  - name: "DeepSeek"
+    model: "deepseek/deepseek-chat"
+
+  - name: "Qwen"
+    model: "qwen/qwen-2.5-72b-instruct"
+
+  - name: "Llama-3.1"
+    model: "meta-llama/llama-3.1-70b-instruct"
+
+  # Add more players here — they'll overflow into a second table automatically:
+  # - name: "Player9"
+  #   model: "openai/gpt-4o-mini"

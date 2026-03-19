@@ -1,0 +1,6 @@
+treys
+httpx
+pyyaml
+rich
+fastapi
+uvicorn[standard]
