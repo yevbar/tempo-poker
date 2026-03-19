@@ -8,6 +8,12 @@ if [ ! -f "$HOME/.tempo/bin/tempo" ]; then
   curl -fsSL https://tempo.xyz/install | bash || true
   # Run tempoup to download the actual tempo binary
   "$HOME/.tempo/bin/tempoup" || true
+  # Wait up to 60s for the binary to appear
+  for i in $(seq 1 60); do
+    [ -f "$HOME/.tempo/bin/tempo" ] && break
+    echo "Waiting for tempo binary... ($i/60)"
+    sleep 1
+  done
 fi
 
 # Restore Tempo wallet keys from env var
